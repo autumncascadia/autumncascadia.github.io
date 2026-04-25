@@ -1,80 +1,182 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Autumn Takahashi</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="web.css">
-  </head>
-  <body>
+/* ============================================
+   Autumn Takahashi — Personal Site Stylesheet
+   web.css
+   ============================================ */
  
-    <div class="container">
  
-      <!-- Header -->
-      <header class="header">
-        <h1 class="name">Autumn Takahashi</h1>
-        <div class="divider"></div>
-        <p class="tagline">Designer &amp; builder of things on the internet.</p>
-      </header>
+/* --- Reset & Base --- */
  
-      <!-- Navigation -->
-      <nav class="nav">
-        <a class="nav-link active" onclick="show('about', this)">About</a>
-        <a class="nav-link" onclick="show('projects', this)">Projects</a>
-      </nav>
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
  
-      <!-- About Section -->
-      <section id="about" class="section visible">
-        <div class="about-text">
-          <p>Hi, my name is Autumn! I'm a creative thinker passionate about building things that feel both useful and beautiful.</p>
-          <p>I spend most of my time at the intersection of design and code — figuring out how to make the web feel a little more human.</p>
-          <p>When I'm not at my desk, you'll find me outside, reading, or hunting for the best matcha in town.</p>
-        </div>
-      </section>
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #1a1a1a;
+  background-color: #fafaf8;
+}
  
-      <!-- Projects Section -->
-      <section id="projects" class="section">
-        <div class="projects-grid">
  
-          <div class="project-card">
-            <p class="project-tag">Web</p>
-            <p class="project-title">Personal site</p>
-            <p class="project-desc">The very site you're looking at — built from scratch with HTML, CSS &amp; JS.</p>
-          </div>
+/* --- Layout --- */
  
-          <div class="project-card">
-            <p class="project-tag">Coming soon</p>
-            <p class="project-title">Project two</p>
-            <p class="project-desc">A placeholder for the next thing you're working on.</p>
-          </div>
+/* The container centers everything and limits how wide the page gets */
+.container {
+  max-width: 680px;
+  margin: 0 auto;             /* center horizontally */
+  padding: 4rem 2rem 6rem;    /* space at top, sides, and bottom */
+}
  
-          <div class="project-card">
-            <p class="project-tag">Coming soon</p>
-            <p class="project-title">Project three</p>
-            <p class="project-desc">More to come — check back soon.</p>
-          </div>
  
-        </div>
-      </section>
+/* --- Header --- */
  
-    </div><!-- end .container -->
+.header {
+  margin-bottom: 3rem;
+}
  
-    <script src="java-website.js"></script>
-    <script>
-      function show(id, el) {
-        document.querySelectorAll('.section').forEach(function(s) {
-          s.classList.remove('visible');
-        });
-        document.querySelectorAll('.nav-link').forEach(function(a) {
-          a.classList.remove('active');
-        });
-        document.getElementById(id).classList.add('visible');
-        el.classList.add('active');
-      }
-    </script>
+/* Your name — large, light weight, tight spacing */
+.name {
+  font-size: 2.6rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  color: #1a1a1a;
+}
  
-  </body>
-</html>
+/* The short horizontal line under your name */
+.divider {
+  width: 2rem;
+  height: 1px;
+  background-color: #1a1a1a;
+  opacity: 0.25;
+  margin: 1.25rem 0;
+}
+ 
+/* The subtitle line below the divider */
+.tagline {
+  font-size: 0.95rem;
+  color: #888;
+  letter-spacing: 0.01em;
+}
+ 
+ 
+/* --- Navigation --- */
+ 
+.nav {
+  display: flex;              /* put links side by side */
+  gap: 1.75rem;               /* space between links */
+  margin-bottom: 3rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
+}
+ 
+.nav-link {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #aaa;
+  text-decoration: none;      /* remove underline */
+  cursor: pointer;
+  transition: color 0.2s;     /* smooth color change on hover */
+}
+ 
+/* The currently selected nav item */
+.nav-link.active {
+  color: #1a1a1a;
+}
+ 
+.nav-link:hover {
+  color: #1a1a1a;
+}
+ 
+ 
+/* --- Sections --- */
+ 
+/* All sections are hidden by default */
+.section {
+  display: none;
+}
+ 
+/* Only the active section is shown */
+.section.visible {
+  display: block;
+}
+ 
+ 
+/* --- About --- */
+ 
+.about-text {
+  max-width: 520px;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: #1a1a1a;
+}
+ 
+/* Add space between paragraphs */
+.about-text p + p {
+  margin-top: 1.25rem;
+}
+ 
+ 
+/* --- Projects --- */
+ 
+/* Responsive grid: 2 columns on wide screens, 1 on mobile */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+ 
+/* Each project is a card with a border */
+.project-card {
+  background-color: #fff;
+  border: 0.5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: border-color 0.2s;
+}
+ 
+.project-card:hover {
+  border-color: rgba(0, 0, 0, 0.25);
+}
+ 
+/* Small label above the project title, e.g. "Web" or "Design" */
+.project-tag {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 0.4rem;
+}
+ 
+.project-title {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+ 
+.project-desc {
+  font-size: 0.88rem;
+  color: #888;
+  line-height: 1.6;
+}
+ 
+ 
+/* --- Mobile --- */
+ 
+/* On small screens, reduce padding and font sizes */
+@media (max-width: 480px) {
+  .container {
+    padding: 2.5rem 1.25rem 4rem;
+  }
+ 
+  .name {
+    font-size: 2rem;
+  }
+}
