@@ -2,51 +2,51 @@
    Autumn Takahashi — Personal Site Stylesheet
    web.css
    ============================================ */
- 
- 
+
+
 /* --- Reset & Base --- */
- 
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
- 
+
 body {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Computer Modern Serif', serif;
+  font-weight: normal;
   font-size: 16px;
   line-height: 1.7;
   color: #1a1a1a;
   background-color: #fafaf8;
 }
- 
- 
+
+
 /* --- Layout --- */
- 
+
 /* The container centers everything and limits how wide the page gets */
 .container {
   max-width: 680px;
   margin: 0 auto;             /* center horizontally */
   padding: 4rem 2rem 6rem;    /* space at top, sides, and bottom */
 }
- 
- 
+
+
 /* --- Header --- */
- 
+
 .header {
   margin-bottom: 3rem;
 }
- 
+
 /* Your name — large, light weight, tight spacing */
 .name {
   font-size: 2.6rem;
-  font-weight: 300;
-  letter-spacing: -0.02em;
+  font-weight: normal;
+  letter-spacing: -0.01em;
   line-height: 1.15;
   color: #1a1a1a;
 }
- 
+
 /* The short horizontal line under your name */
 .divider {
   width: 2rem;
@@ -55,17 +55,17 @@ body {
   opacity: 0.25;
   margin: 1.25rem 0;
 }
- 
+
 /* The subtitle line below the divider */
 .tagline {
   font-size: 0.95rem;
   color: #888;
   letter-spacing: 0.01em;
 }
- 
- 
+
+
 /* --- Navigation --- */
- 
+
 .nav {
   display: flex;              /* put links side by side */
   gap: 1.75rem;               /* space between links */
@@ -73,7 +73,7 @@ body {
   padding-bottom: 0.75rem;
   border-bottom: 0.5px solid rgba(0, 0, 0, 0.12);
 }
- 
+
 .nav-link {
   font-size: 0.75rem;
   font-weight: 400;
@@ -84,54 +84,54 @@ body {
   cursor: pointer;
   transition: color 0.2s;     /* smooth color change on hover */
 }
- 
+
 /* The currently selected nav item */
 .nav-link.active {
   color: #1a1a1a;
 }
- 
+
 .nav-link:hover {
   color: #1a1a1a;
 }
- 
- 
+
+
 /* --- Sections --- */
- 
+
 /* All sections are hidden by default */
 .section {
   display: none;
 }
- 
+
 /* Only the active section is shown */
 .section.visible {
   display: block;
 }
- 
- 
+
+
 /* --- About --- */
- 
+
 .about-text {
   max-width: 520px;
   font-size: 1rem;
   line-height: 1.85;
   color: #1a1a1a;
 }
- 
+
 /* Add space between paragraphs */
 .about-text p + p {
   margin-top: 1.25rem;
 }
- 
- 
+
+
 /* --- Projects --- */
- 
+
 /* Responsive grid: 2 columns on wide screens, 1 on mobile */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 1rem;
 }
- 
+
 /* Each project is a card with a border */
 .project-card {
   background-color: #fff;
@@ -140,11 +140,11 @@ body {
   padding: 1.25rem;
   transition: border-color 0.2s;
 }
- 
+
 .project-card:hover {
   border-color: rgba(0, 0, 0, 0.25);
 }
- 
+
 /* Small label above the project title, e.g. "Web" or "Design" */
 .project-tag {
   font-size: 0.65rem;
@@ -153,30 +153,31 @@ body {
   color: #bbb;
   margin-bottom: 0.4rem;
 }
- 
+
 .project-title {
   font-size: 0.95rem;
   font-weight: 400;
   color: #1a1a1a;
   margin-bottom: 0.4rem;
 }
- 
+
 .project-desc {
   font-size: 0.88rem;
   color: #888;
   line-height: 1.6;
 }
- 
- 
+
+
 /* --- Mobile --- */
- 
+
 /* On small screens, reduce padding and font sizes */
 @media (max-width: 480px) {
   .container {
     padding: 2.5rem 1.25rem 4rem;
   }
- 
+
   .name {
     font-size: 2rem;
   }
 }
+
